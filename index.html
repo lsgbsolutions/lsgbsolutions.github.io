@@ -3,149 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>LSGB Solutions · Automatizaciones y bots para negocios</title>
-<meta name="description" content="LSGB Solutions arma bots de atención y automatizaciones para negocios: responden mensajes, ordenan consultas y avisan al equipo cuando hace falta una persona. Corrientes, Argentina.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23173A35'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='%23F2C6D6' text-anchor='middle'%3ELS%3C/text%3E%3C/svg%3E">
+<title>Delegá · Automatización comercial para negocios</title>
+<meta name="description" content="Delegá arma agentes con IA, integraciones con CRM, seguimiento automático y paneles de métricas para que tu negocio atienda, siga y mida sus ventas. Corrientes, Argentina.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%230E3A66'/%3E%3Cg transform='translate(6 8) scale(0.9)'%3E%3Cpath d='M28 20 H92 A18 18 0 0 1 110 38 V68 A18 18 0 0 1 92 86 H54 L34 104 V86 H28 A18 18 0 0 1 10 68 V38 A18 18 0 0 1 28 20 Z' fill='none' stroke='%23fff' stroke-width='8' stroke-linejoin='round'/%3E%3Cline x1='36' y1='53' x2='82' y2='53' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='36' cy='53' r='7' fill='%23fff'/%3E%3Ccircle cx='59' cy='53' r='7' fill='%23fff'/%3E%3Ccircle cx='84' cy='53' r='10' fill='%234CCAD3'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --mist: #EEF1EC;
+    --bg: #F4F7F8;
     --paper: #FFFFFF;
-    --river: #173A35;
-    --reed: #5A7268;
-    --line: #D3DBD5;
-    --sand: #E6E0CF;
-    --lapacho: #C23A72;
-    --lapacho-soft: #F6DCE7;
-    --font: "Familjen Grotesk", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --ink: #0E3A66;
+    --text: #22313D;
+    --muted: #5B6B78;
+    --line: #D6DEE4;
+    --teal: #17A2AE;
+    --teal-soft: #DDF3F5;
+    --font: "Red Hat Display", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --mist: #10231F;
-      --paper: #17302A;
-      --river: #E6EEE9;
-      --reed: #A3B8AE;
-      --line: #2B4740;
-      --sand: #24413A;
-      --lapacho: #F07FAE;
-      --lapacho-soft: #3A2430;
+      --bg: #0B1E33;
+      --paper: #112A45;
+      --ink: #E8F0F6;
+      --text: #D5E0E8;
+      --muted: #9FB2C2;
+      --line: #22405F;
+      --teal: #4CCAD3;
+      --teal-soft: #163A4E;
     }
   }
-
   *, *::before, *::after { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0;
-    background: var(--mist);
-    color: var(--river);
-    font-family: var(--font);
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--font); font-size: 1.0625rem; line-height: 1.6;
+    padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   a { color: inherit; }
-  a:focus-visible, .btn:focus-visible {
-    outline: 3px solid var(--lapacho);
-    outline-offset: 3px;
-    border-radius: 6px;
-  }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
 
-  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 1.5rem; }
+  header.top { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; }
+  .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--ink); font-weight: 800; font-size: 1.45rem; letter-spacing: -0.02em; }
+  .brand svg { width: 40px; height: 40px; }
+  header.top nav a { color: var(--muted); text-decoration: none; margin-left: 1.4rem; font-size: 0.98rem; }
+  header.top nav a:hover { color: var(--ink); text-decoration: underline; }
 
-  header.top {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.5rem 0;
-  }
-  .brand { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; text-decoration: none; }
-  .brand span { color: var(--reed); font-weight: 500; }
-  header.top nav a { color: var(--reed); text-decoration: none; margin-left: 1.25rem; font-size: 0.98rem; }
-  header.top nav a:hover { color: var(--river); text-decoration: underline; }
-
-  /* Hero: la propuesta a la izquierda, una conversación real a la derecha */
-  .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: 3.5rem;
-    align-items: center;
-    padding: 3.5rem 0 4.5rem;
-  }
-  h1 {
-    font-size: clamp(2.2rem, 4.6vw, 3.5rem);
-    line-height: 1.06;
-    letter-spacing: -0.025em;
-    font-weight: 700;
-    margin: 0 0 1.25rem;
-    max-width: 15ch;
-  }
-  .lede { font-size: 1.2rem; color: var(--reed); max-width: 34rem; margin: 0 0 2rem; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 3.5rem; align-items: center; padding: 3rem 0 4.5rem; }
+  h1 { color: var(--ink); font-size: clamp(2.2rem, 4.6vw, 3.4rem); line-height: 1.05; letter-spacing: -0.03em; font-weight: 800; margin: 0 0 1.25rem; max-width: 16ch; }
+  .lede { font-size: 1.2rem; color: var(--muted); max-width: 35rem; margin: 0 0 2rem; }
   .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-  .btn {
-    display: inline-block; text-decoration: none; font-weight: 600;
-    padding: 0.8rem 1.3rem; border-radius: 999px; border: 2px solid var(--river);
-  }
-  .btn.primary { background: var(--river); color: var(--mist); }
-  .btn.primary:hover { background: var(--lapacho); border-color: var(--lapacho); color: #fff; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 700; padding: 0.8rem 1.3rem; border-radius: 999px; border: 2px solid var(--ink); color: var(--ink); }
+  .btn.primary { background: var(--ink); color: var(--bg); }
+  .btn.primary:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
   .btn.ghost:hover { background: var(--paper); }
 
-  .chat {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    padding: 1.4rem 1.2rem 1rem;
-    display: flex; flex-direction: column; gap: 0.6rem;
-  }
-  .msg {
-    max-width: 82%;
-    padding: 0.65rem 0.95rem;
-    border-radius: 18px;
-    font-size: 1rem;
-    line-height: 1.45;
-    opacity: 0;
-    transform: translateY(6px);
-    animation: in 420ms ease-out forwards;
-  }
-  .msg.them { align-self: flex-start; background: var(--sand); border-bottom-left-radius: 6px; }
-  .msg.bot  { align-self: flex-end; background: var(--river); color: var(--mist); border-bottom-right-radius: 6px; }
+  .chat { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 1.4rem 1.2rem 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .msg { max-width: 84%; padding: 0.65rem 0.95rem; border-radius: 18px; font-size: 1rem; line-height: 1.45; opacity: 0; transform: translateY(6px); animation: in 420ms ease-out forwards; }
+  .msg.them { align-self: flex-start; background: var(--teal-soft); border-bottom-left-radius: 6px; color: var(--text); }
+  .msg.bot { align-self: flex-end; background: var(--ink); color: var(--bg); border-bottom-right-radius: 6px; }
   .msg:nth-child(1) { animation-delay: 150ms; }
   .msg:nth-child(2) { animation-delay: 900ms; }
   .msg:nth-child(3) { animation-delay: 1700ms; }
-  .msg:nth-child(4) { animation-delay: 2400ms; }
-  .msg:nth-child(5) { animation-delay: 3200ms; }
-  .chat-note {
-    margin: 0.5rem 0 0; font-size: 0.88rem; color: var(--reed);
-    border-top: 1px solid var(--line); padding-top: 0.75rem;
-  }
+  .msg:nth-child(4) { animation-delay: 2500ms; }
+  .chat-note { margin: 0.5rem 0 0; font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 0.75rem; }
   @keyframes in { to { opacity: 1; transform: none; } }
-  @media (prefers-reduced-motion: reduce) {
-    .msg { animation: none; opacity: 1; transform: none; }
-  }
+  @media (prefers-reduced-motion: reduce) { .msg { animation: none; opacity: 1; transform: none; } }
 
   section.block { padding: 3.5rem 0; border-top: 1px solid var(--line); }
-  h2 { font-size: 1.7rem; letter-spacing: -0.015em; margin: 0 0 1.75rem; font-weight: 700; }
-
-  .services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
-  .services h3 { font-size: 1.15rem; margin: 0 0 0.5rem; font-weight: 600; }
-  .services p { margin: 0; color: var(--reed); }
-  .services .mark {
-    display: block; width: 2.25rem; height: 4px; border-radius: 4px;
-    background: var(--lapacho); margin-bottom: 1rem;
-  }
-
-  .how { max-width: 44rem; font-size: 1.15rem; margin: 0; }
+  h2 { color: var(--ink); font-size: 1.75rem; letter-spacing: -0.02em; margin: 0 0 1.75rem; font-weight: 800; }
+  .services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.25rem 3rem; }
+  .services h3 { color: var(--ink); font-size: 1.15rem; margin: 0 0 0.45rem; font-weight: 700; }
+  .services p { margin: 0; color: var(--muted); }
+  .services .mark { display: block; width: 2.25rem; height: 4px; border-radius: 4px; background: var(--teal); margin-bottom: 0.9rem; }
+  .how { max-width: 46rem; font-size: 1.12rem; margin: 0 0 1rem; }
 
   .contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; }
-  dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.5rem; }
-  dt { color: var(--reed); }
-  dd { margin: 0; }
   .contact .cta-line { font-size: 1.15rem; margin: 0 0 1.5rem; max-width: 30rem; }
+  dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.5rem; }
+  dt { color: var(--muted); }
+  dd { margin: 0; }
 
-  footer { padding: 2rem 0 2.5rem; color: var(--reed); font-size: 0.92rem; border-top: 1px solid var(--line); }
+  footer { padding: 2rem 0 2.5rem; color: var(--muted); font-size: 0.92rem; border-top: 1px solid var(--line); }
 
   @media (max-width: 820px) {
-    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 2rem; }
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 1.5rem; }
     .services { grid-template-columns: 1fr; gap: 2rem; }
     .contact { grid-template-columns: 1fr; gap: 2rem; }
     header.top nav { display: none; }
@@ -159,9 +102,13 @@
 <body>
   <div class="wrap">
     <header class="top">
-      <a class="brand" href="#">LSGB <span>Solutions</span></a>
+      <a class="brand" href="#">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="26" fill="#0E3A66"/><g transform="translate(6 8) scale(0.9)"><path d="M28 20 H92 A18 18 0 0 1 110 38 V68 A18 18 0 0 1 92 86 H54 L34 104 V86 H28 A18 18 0 0 1 10 68 V38 A18 18 0 0 1 28 20 Z" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/><line x1="36" y1="53" x2="82" y2="53" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="36" cy="53" r="7" fill="#fff"/><circle cx="59" cy="53" r="7" fill="#fff"/><circle cx="84" cy="53" r="10" fill="#4CCAD3"/></g></svg>
+        Delegá
+      </a>
       <nav aria-label="Secciones">
         <a href="#servicios">Servicios</a>
+        <a href="#como-trabajo">Cómo trabajamos</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </header>
@@ -169,62 +116,51 @@
     <main>
       <section class="hero">
         <div>
-          <h1>Tu negocio responde, aunque estés ocupado.</h1>
-          <p class="lede">Armo bots y automatizaciones que contestan mensajes, toman reservas y pedidos, ordenan las consultas y le avisan a tu equipo cuando una persona tiene que intervenir.</p>
+          <h1>Tu negocio atiende, hace seguimiento y mide sus ventas solo.</h1>
+          <p class="lede">Armamos el motor comercial de tu negocio: un agente con inteligencia artificial que responde por WhatsApp e Instagram, tu CRM siempre al día, seguimiento automático y paneles que muestran qué anuncios traen ventas.</p>
           <div class="actions">
-            <a class="btn primary" href="https://wa.me/5493794941660">Escribime por WhatsApp</a>
+            <a class="btn primary" href="https://wa.me/5493794941660">Escribinos por WhatsApp</a>
             <a class="btn ghost" href="mailto:lsgbsolutions@hotmail.com">Mandar un email</a>
           </div>
         </div>
-
-        <div class="chat" role="img" aria-label="Ejemplo de conversación: un cliente pide una cancha para mañana a las 20 y el bot la reserva y confirma con recordatorio.">
-          <div class="msg them">Hola, ¿tienen cancha libre mañana a las 20?</div>
-          <div class="msg bot">¡Hola! Mañana a las 20 está libre la cancha 2. ¿A nombre de quién la reservo?</div>
-          <div class="msg them">Martín</div>
-          <div class="msg bot">Listo, Martín: cancha 2, mañana a las 20. Te mando un recordatorio una hora antes.</div>
-          <div class="msg them">Genial, gracias</div>
-          <p class="chat-note">Una reserva resuelta a las 23:40, sin que nadie del club tuviera que contestar.</p>
+        <div class="chat" role="img" aria-label="Ejemplo: una persona consulta desde un anuncio, el agente entiende qué necesita y agenda una reunión con el equipo.">
+          <div class="msg them">Hola, vi el anuncio de la mentoría. ¿Cómo es?</div>
+          <div class="msg bot">¡Hola! Contame un poco: ¿a qué te dedicás y qué te gustaría mejorar hoy en tu negocio?</div>
+          <div class="msg them">Soy diseñadora y quiero conseguir más clientes</div>
+          <div class="msg bot">Genial. Te propongo una llamada de 20 minutos con el equipo. ¿Te queda bien mañana a las 18?</div>
+          <p class="chat-note">La consulta queda registrada en el CRM, con el anuncio del que vino.</p>
         </div>
       </section>
 
       <section class="block" id="servicios">
-        <h2>Qué hago</h2>
+        <h2>Qué hacemos</h2>
         <div class="services">
-          <div>
-            <span class="mark" aria-hidden="true"></span>
-            <h3>Bots de atención</h3>
-            <p>Responden consultas frecuentes en WhatsApp e Instagram, toman reservas y pedidos, y pasan la conversación a una persona cuando hace falta.</p>
-          </div>
-          <div>
-            <span class="mark" aria-hidden="true"></span>
-            <h3>Automatizaciones entre herramientas</h3>
-            <p>Conecto tu CRM, planillas, calendario y formularios para que los datos se carguen una sola vez y nadie tenga que copiarlos a mano.</p>
-          </div>
-          <div>
-            <span class="mark" aria-hidden="true"></span>
-            <h3>Seguimiento y métricas</h3>
-            <p>Paneles para ver de dónde llegan las consultas, cuántas terminan en una venta y qué publicaciones o anuncios las generan.</p>
-          </div>
+          <div><span class="mark" aria-hidden="true"></span><h3>Agentes de atención con IA</h3><p>Responden por WhatsApp e Instagram, entienden qué necesita cada persona, la califican y agendan la reunión con tu equipo. Cuando hace falta una persona, le avisan.</p></div>
+          <div><span class="mark" aria-hidden="true"></span><h3>Integración con tu CRM</h3><p>Cada conversación queda registrada en tu sistema de gestión, con su historial y su estado, para que ninguna consulta se pierda.</p></div>
+          <div><span class="mark" aria-hidden="true"></span><h3>Seguimiento automático</h3><p>Los que no respondieron reciben seguimiento en el momento justo, y tu equipo recibe tareas para los casos que necesitan un toque personal.</p></div>
+          <div><span class="mark" aria-hidden="true"></span><h3>Métricas y atribución de anuncios</h3><p>Paneles que muestran de qué anuncio o publicación vino cada consulta, cuántas terminan en venta y dónde conviene invertir.</p></div>
         </div>
       </section>
 
-      <section class="block">
-        <h2>Cómo trabajo</h2>
-        <p class="how">Primero entiendo cómo atendés hoy. Después armo la automatización sobre tus propias cuentas, la pruebo con casos reales antes de dejarla andando y te dejo todo documentado. Los datos de tus clientes quedan en tus cuentas y solo se usan para atenderlos.</p>
+      <section class="block" id="como-trabajo">
+        <h2>Cómo trabajamos</h2>
+        <p class="how">Primero entendemos cómo atendés hoy. Después armamos la automatización sobre tus propias cuentas, la probamos con casos reales antes de dejarla andando y te dejamos todo documentado.</p>
+        <p class="how">Accedemos solo a lo que nos compartís: tu página y tu cuenta de Instagram se comparten con nosotros como socio desde tu Business Manager, sin pedirte contraseñas. Los datos de tus clientes se usan únicamente para darte el servicio y no se comparten con terceros.</p>
       </section>
 
       <section class="block" id="contacto">
         <h2>Contacto</h2>
         <div class="contact">
           <div>
-            <p class="cta-line">Contame qué querés automatizar y te digo cómo lo resolvería y cuánto llevaría.</p>
+            <p class="cta-line">Contanos qué querés automatizar y te decimos cómo lo resolveríamos y cuánto llevaría.</p>
             <div class="actions">
-              <a class="btn primary" href="https://wa.me/5493794941660">Escribime por WhatsApp</a>
+              <a class="btn primary" href="https://wa.me/5493794941660">Escribinos por WhatsApp</a>
               <a class="btn ghost" href="mailto:lsgbsolutions@hotmail.com">Mandar un email</a>
             </div>
           </div>
           <dl>
-            <dt>Responsable</dt><dd>Leandro Scherf</dd>
+            <dt>Marca</dt><dd>Delegá</dd>
+            <dt>Titular</dt><dd>Leandro Scherf</dd>
             <dt>CUIT</dt><dd>20-36989814-1</dd>
             <dt>Actividad</dt><dd>Consultoría en informática y desarrollo de software</dd>
             <dt>Domicilio</dt><dd>Av. Armando Carmelo Romero 9523, Corrientes (3400), Argentina</dd>
@@ -235,7 +171,7 @@
       </section>
     </main>
 
-    <footer>© 2026 LSGB Solutions. Corrientes, Argentina.</footer>
+    <footer>© 2026 Delegá. Corrientes, Argentina.</footer>
   </div>
 </body>
 </html>
